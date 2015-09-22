@@ -7,9 +7,9 @@ image_list = []
 current_image = 0
 
 comics = Comic_Library()
-comic_static_folder = './static/comic'
+comic_static_folder = os.path.dirname(os.path.realpath(__file__)) + '/../static/comic'
 
 def get_comics():
     for directory in os.listdir(comic_static_folder):
-        print directory
+        print 'Found comic ' + directory
         comics.add_comic(id=directory, folder=comic_static_folder + '/' + directory)

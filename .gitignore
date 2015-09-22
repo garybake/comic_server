@@ -56,6 +56,6 @@ docs/_build/
 # PyBuilder
 target/
 
-src/.pip/*
+.pip/*
 src/static/comic
 comics/
