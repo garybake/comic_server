@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ static_url("css/style.css") }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.4/hammer.min.js"></script>
+</head>
+<body>
+    <a href="/comic_page?comic_name={{comic_name}}&page={{back}}" id="BackBtn" class="btn btn-info" role="button">&lt;</a>
+    <img class="comic_image" id="comic_img" src="/static/comic/{{ comic_name }}/{{ pic_file }}">
+    <a href="/comic_page?comic_name={{comic_name}}&page={{forward}}" id="FwdBtn" class="btn btn-info" role="button">&gt;</a>
+
+    <script src="{{ static_url("lib/app.js") }}"></script>
+</body>
+</html>
