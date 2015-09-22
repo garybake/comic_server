@@ -22,7 +22,7 @@ class Comic:
         self.id = id
         self.folder = folder
         self.images = []
-        self.folder_image = self.folder + '/folder.jpg'
+        self.folder_image = '/static/comic/' + self.id + '/folder.jpg'
 
     def import_data(self):
         image_list = []
