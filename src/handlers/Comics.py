@@ -22,7 +22,7 @@ class Comic:
         self.id = id
         self.folder = folder
         self.images = []
-        self.folder_image = '/static/comic/' + self.id + '/folder.jpg'
+        # self.folder_image = '/static/comic/' + self.id + '/folder.jpg'
 
     def import_data(self):
         image_list = []
@@ -32,3 +32,4 @@ class Comic:
             image_list.sort()
 
         self.images = image_list
+        self.folder_image = '/static/comic/' + self.id + '/' + self.images[0]
