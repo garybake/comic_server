@@ -3,6 +3,7 @@
 import os
 import shutil
 import zipfile
+import rarfile
 import re
 
 import tornado.web
@@ -19,7 +20,6 @@ class AdminRefreshHandler(tornado.web.RequestHandler):
         for file in os.listdir(comic_archive_folder):
 
             full_file = comic_archive_folder + '/' + file
-
             if file.endswith(".cbz"):
 
                 clean_file = re.sub('[^0-9a-zA-Z]+', '_', file[:-4])
@@ -31,6 +31,20 @@ class AdminRefreshHandler(tornado.web.RequestHandler):
                 self.write(clean_file)
                 self.extract_zip(zip_file=full_file, output_folder=clean_file_folder)
 
+            elif file.endswith(".cbr"):
+
+                clean_file = re.sub('[^0-9a-zA-Z]+', '_', file[:-4])
+                clean_file_folder = comic_static_folder + '/' + clean_file
+
+                if not os.path.exists(clean_file_folder):
+                    os.makedirs(clean_file_folder)
+
+                self.write(clean_file)
+                rar = rarfile.RarFile(full_file)
+                rar.extractall(path=clean_file_folder)
+                # self.extract_zip(zip_file=full_file, output_folder=clean_file_folder)
+
+                print 'a rar file: ' + full_file
             else:
                 # TODO - rarfile
                 # Are there any other cbx formats?

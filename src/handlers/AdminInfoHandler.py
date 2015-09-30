@@ -1,10 +1,5 @@
 #!/usr/bin/env python2
 
-# import os
-# import shutil
-# import zipfile
-# import re
-
 import tornado.web
 import tornado.gen
 

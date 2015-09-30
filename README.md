@@ -5,6 +5,7 @@ Tornado based web server for comic (cbr/cbz) files.
 - Scratching an itch where I was unable to read large comics on my ipad 2
 
 Install
+Requires unrar to read rar files
 pip install -r requirements.txt
 
 or
