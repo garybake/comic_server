@@ -15,6 +15,10 @@ class Comic_Library(list):
                 return comic
         return None
 
+    def clear(self):
+        print 'clearing comics'
+        self[:] = []
+
 
 class Comic:
 

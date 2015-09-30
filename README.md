@@ -7,6 +7,10 @@ Tornado based web server for comic (cbr/cbz) files.
 Install
 pip install -r requirements.txt
 
+or
+pip install -r requirements.txt -t .pip
+(from http://blog.zoomeranalytics.com/pip-install-t/)
+
 Config
 Open comics archive files and extract to folder in ./src/static/comic/<comic_name>
 

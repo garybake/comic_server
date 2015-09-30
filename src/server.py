@@ -9,6 +9,7 @@ import settings
 from handlers.RootHandler import *
 from handlers.ComicPageHandler import *
 from handlers.AdminRefreshHandler import *
+from handlers.AdminInfoHandler import *
 from handlers.common import *
 
 from tornado.options import define, options
@@ -22,7 +23,8 @@ class Application(tornado.web.Application):
         handlers = [
             (r"/", RootHandler),
             (r"/comic_page", ComicPageHandler),
-            (r"/admin/refresh", AdminRefreshHandler)
+            (r"/admin/refresh", AdminRefreshHandler),
+            (r"/admin/info", AdminInfoHandler)
         ]
         settings = {
             "template_path": settings.TEMPLATE_PATH,

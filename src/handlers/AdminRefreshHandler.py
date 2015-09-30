@@ -36,6 +36,8 @@ class AdminRefreshHandler(tornado.web.RequestHandler):
                 # Are there any other cbx formats?
                 print 'not a zip: ' + full_file
 
+        get_comics()
+
     def clear_comics_folder(self, folder):
         for file in os.listdir(folder):
             file_path = os.path.join(folder, file)

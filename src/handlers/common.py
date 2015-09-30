@@ -11,6 +11,7 @@ comic_static_folder = os.path.dirname(os.path.realpath(__file__)) + '/../static/
 comic_archive_folder = os.path.dirname(os.path.realpath(__file__)) + '/../../comics'
 
 def get_comics():
+    comics.clear()
     for directory in os.listdir(comic_static_folder):
         print 'Found comic ' + directory
         comics.add_comic(id=directory, folder=comic_static_folder + '/' + directory)
