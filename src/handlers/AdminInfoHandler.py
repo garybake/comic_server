@@ -10,4 +10,4 @@ class AdminInfoHandler(tornado.web.RequestHandler):
 
     def get(self):
         for comic in comics:
-            self.write(comic.id)
+            self.write(comic.id + '\n')

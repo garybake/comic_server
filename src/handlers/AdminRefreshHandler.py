@@ -28,8 +28,9 @@ class AdminRefreshHandler(tornado.web.RequestHandler):
                 if not os.path.exists(clean_file_folder):
                     os.makedirs(clean_file_folder)
 
-                self.write(clean_file)
+                self.write(clean_file + '\n')
                 self.extract_zip(zip_file=full_file, output_folder=clean_file_folder)
+                flatten_folder(clean_file_folder)
 
             elif file.endswith(".cbr"):
 
@@ -39,10 +40,10 @@ class AdminRefreshHandler(tornado.web.RequestHandler):
                 if not os.path.exists(clean_file_folder):
                     os.makedirs(clean_file_folder)
 
-                self.write(clean_file)
+                self.write(clean_file + '\n')
                 rar = rarfile.RarFile(full_file)
                 rar.extractall(path=clean_file_folder)
-                # self.extract_zip(zip_file=full_file, output_folder=clean_file_folder)
+                flatten_folder(clean_file_folder)
 
                 print 'a rar file: ' + full_file
             else:
